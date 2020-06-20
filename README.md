@@ -36,5 +36,14 @@ class Tasks():
         print('...done')
 ```
 
-Then start your worker.
-`python worker.py`
+Then start your server and worker.
+
+`./manage.py zeroserver`
+
+`./manage.py worker worker1 start`
+
+
+Tasks and taskstatus can be found in the Admin,
+and a short summary is availble using
+
+`./manage.py zerostats`

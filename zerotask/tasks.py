@@ -1,23 +1,5 @@
 import time
-
-from functools import partial, wraps
-
-def task(func=None, queue=0):
-    """ Dummy wrapper, which is only used when this files is accessed by the worker
-        It gets overwritten when this file is accessed by the producer/ django application.
-    """
-    if func is None:
-         return partial(task, queue=queue)
-
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        return func(*args, **kwargs)
-    return wrapper
-
-try:
-    from .zerotask import task
-except:
-    pass
+from .decorator import task
 
 ###################
 
@@ -30,5 +12,6 @@ class Tasks():
 
     # example
     @task()
-    def longtask(a,b,sec):
-        time.sleep(5)
+    def longtask(*args, **kwargs):
+        sec = kwargs['sec']
+        time.sleep(sec)

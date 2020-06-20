@@ -7,7 +7,7 @@ setuptools.setup(
     name="zerotask", # Replace with your own username
     version="0.0",
     author="Alex",
-    description="A small example package",
+    description="Easy backgound tasks scheduler",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Alex-codeLab/zerotask",
